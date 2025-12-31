@@ -16,7 +16,11 @@
     section#now { display: block; }
     body:has(section:target) section#now { display: none; }
     
-    /* Sidebar styling */    
+    /* Sidebar styling */
+    aside {
+      display: none;
+    }
+    
     aside h3 {
       font-size: 0.9em;
       opacity: 0.7;
@@ -39,19 +43,13 @@
         position: relative;
       }
       
-      aside {
+      section#now aside {
         display: block;
         position: absolute;
         right: calc(100% + 2rem);
         top: 0;
         width: 200px;
         text-align: right;
-      }
-      
-      /* Hide on other pages */
-      body:has(section#about:target) aside,
-      body:has(section#uses:target) aside {
-        display: none;
       }
     }
     
@@ -86,9 +84,13 @@
       <a href="feed.xml">rss</a>
     </nav>
   </header>
-
   <main>
     <section id="now">
+      <aside>
+        <h3>Posts</h3>
+        <ul id="post-list"></ul>
+      </aside>
+      
       <h2>Now</h2>
       
       <article id="2025-12-31-first-post">
@@ -99,12 +101,10 @@
         <p>This is my first blog post!</p>
       </article>
     </section>
-
     <section id="about">
       <h2>About</h2>
       <p>I'm Joseph, a primary school teacher in New Zealand originally from America.</p>
     </section>
-
     <section id="uses">
       <h2>Uses</h2>
       <ul>
@@ -112,16 +112,9 @@
       </ul>
     </section>
   </main>
-
-  <aside>
-    <h3>Posts</h3>
-    <ul id="post-list"></ul>
-  </aside>
-
   <footer>
     <p>Joseph • <a href="mailto:jsmolinelli@proton.me">jsmolinelli@proton.me</a></p>
   </footer>
-
   <script>
     // Auto-generate post list
     const articles = document.querySelectorAll('#now article');
