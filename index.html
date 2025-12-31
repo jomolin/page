@@ -16,24 +16,6 @@
     section#now { display: block; }
     body:has(section:target) section#now { display: none; }
     
-    /* Styling */
-    article + article { 
-      margin-top: 2rem; 
-      padding-top: 2rem; 
-      border-top: 1px solid #333; 
-    }
-    time { 
-      display: block; 
-      font-size: 0.9em; 
-      opacity: 0.7; 
-      margin-bottom: 0.25rem;
-    }
-    time a.permalink::after {
-      content: ' ☍';
-      margin-left: 0.5rem;
-      font-size: 1.1em;
-    }
-
     /* Two-column layout for now page only */
     @media (min-width: 900px) {
       body:not(:has(section:target)) main {
@@ -46,11 +28,16 @@
       
       body:not(:has(section:target)) aside {
         display: block;
-        position: fixed;
-        left: calc((100vw - 60rem) / 2 - 220px);
-        top: 8rem;
+        position: absolute;
+        right: calc(100% + 2rem);
+        top: 0;
         width: 200px;
         text-align: right;
+      }
+      
+      /* Hide sidebar when scrolled to a specific post */
+      body:not(:has(section:target)):has(:target) aside {
+        display: none;
       }
     }
     
