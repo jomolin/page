@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joseph's Page</title>
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css">
+  <style>
+    /* Hide all sections by default */
+    section { display: none; }
+    
+    /* Show section when its hash is in the URL */
+    section:target { display: block; }
+    
+    /* Show #now by default (no hash) */
+    section#now { display: block; }
+    body:has(section:target) section#now { display: none; }
+    
+    /* Styling */
+    article + article { 
+      margin-top: 2rem; 
+      padding-top: 2rem; 
+      border-top: 1px solid #333; 
+    }
+    time { 
+      display: block; 
+      font-size: 0.9em; 
+      opacity: 0.7; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Joseph's Page</h1>
+    <nav>
+      <a href="#now">now</a>
+      <a href="#about">about</a>
+      <a href="#uses">uses</a>
+      <a href="feed.xml">rss</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="now">
+      <h2>Now</h2>
+      
+      <article>
+        <time>2025-12-31</time>
+        <h3>My First Post</h3>
+        <p>This is my first blog post!</p>
+      </article>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>I'm Joseph, a primary school teacher in New Zealand originally from America.</p>
+    </section>
+
+    <section id="uses">
+      <h2>Uses</h2>
+      <ul>
+        <li>Obsidian for notes</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Joseph • <a href="mailto:jsmolinelli@proton.me">jsmolinelli@proton.me</a></p>
+  </footer>
+</body>
+</html>
