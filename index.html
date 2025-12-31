@@ -36,35 +36,57 @@
 
     /* Two-column layout for now page only */
     @media (min-width: 900px) {
-      body:not(:has(section:target)) {
-        display: grid;
-        grid-template-columns: 1fr 200px;
-        grid-template-areas:
-          "header header"
-          "main aside"
-          "footer footer";
-        gap: 3rem;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      
-      body:not(:has(section:target)) header {
-        grid-area: header;
-      }
-      
       body:not(:has(section:target)) main {
-        grid-area: main;
+        position: relative;
+      }
+      
+      aside {
+        display: none;
       }
       
       body:not(:has(section:target)) aside {
-        grid-area: aside;
         display: block;
-        padding-top: 3rem;
+        position: fixed;
+        left: calc((100vw - 60rem) / 2 - 220px);
+        top: 8rem;
+        width: 200px;
+        text-align: right;
       }
-      
-      body:not(:has(section:target)) footer {
-        grid-area: footer;
-      }
+    }
+    
+    /* Sidebar styling */
+    aside h3 {
+      font-size: 0.9em;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+    
+    aside ul {
+      list-style: none;
+      padding: 0;
+      font-size: 0.85em;
+    }
+    
+    aside li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Styling */
+    article + article { 
+      margin-top: 2rem; 
+      padding-top: 2rem; 
+      border-top: 1px solid #333; 
+    }
+    time { 
+      display: block; 
+      font-size: 0.9em; 
+      opacity: 0.7; 
+      margin-bottom: 0.25rem;
+    }
+    time a.permalink::after {
+      content: ' ☍';
+      margin-left: 0.5rem;
+      font-size: 1.1em;
     }
   </style>
 </head>
