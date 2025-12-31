@@ -3,7 +3,7 @@
   <title>Joseph's Page</title>
   <link href="https://jomolin.github.io/page/feed.xml" rel="self"/>
   <link href="https://jomolin.github.io/page"/>
-  <updated>2025-12-29T00:00:00Z</updated>
+  <updated>2025-12-31T00:00:00Z</updated>
   <id>https://jomolin.github.io/page/</id>
   <author>
     <name>Joseph</name>
@@ -13,8 +13,8 @@
   <entry>
     <title>My First Post</title>
     <link href="https://jomolin.github.io/page#now"/>
-    <id>https://jomolin.github.io/page#2025-12-29-first-post</id>
-    <updated>2025-12-29T00:00:00Z</updated>
+    <id>https://jomolin.github.io/page#2025-12-31-first-post</id>
+    <updated>2025-12-31T00:00:00Z</updated>
     <content type="html"><![CDATA[
       <p>This is my first blog post!</p>
     ]]></content>
