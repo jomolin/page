@@ -16,9 +16,9 @@
     section#now { display: block; }
     body:has(section:target) section#now { display: none; }
     
-    /* Two-column layout for now page only */
+    /* Sidebar - show only on now page */
     @media (min-width: 900px) {
-      body:not(:has(section:target)) main {
+      section#now {
         position: relative;
       }
       
@@ -26,18 +26,13 @@
         display: none;
       }
       
-      body:not(:has(section:target)) aside {
+      body:not(:has(section#about:target)):not(:has(section#uses:target)) aside {
         display: block;
         position: absolute;
         right: calc(100% + 2rem);
         top: 0;
         width: 200px;
         text-align: right;
-      }
-      
-      /* Hide sidebar when scrolled to a specific post */
-      body:not(:has(section:target)):has(:target) aside {
-        display: none;
       }
     }
     
