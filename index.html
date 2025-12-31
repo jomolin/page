@@ -72,8 +72,27 @@
     </section>
   </main>
 
+  <aside>
+    <h3>Posts</h3>
+    <ul id="post-list"></ul>
+  </aside>
+
   <footer>
     <p>Joseph • <a href="mailto:jsmolinelli@proton.me">jsmolinelli@proton.me</a></p>
   </footer>
+
+  <script>
+    // Auto-generate post list
+    const articles = document.querySelectorAll('#now article');
+    const list = document.getElementById('post-list');
+    
+    articles.forEach(article => {
+      const title = article.querySelector('h3').textContent;
+      const id = article.id;
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#${id}">${title}</a>`;
+      list.appendChild(li);
+    });
+  </script>
 </body>
 </html>
