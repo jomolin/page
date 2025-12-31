@@ -16,27 +16,11 @@
     section#now { display: block; }
     body:has(section:target) section#now { display: none; }
     
-    /* Sidebar - show only on now page */
-    @media (min-width: 900px) {
-      section#now {
-        position: relative;
-      }
-      
-      aside {
-        display: none;
-      }
-      
-      body:not(:has(section#about:target)):not(:has(section#uses:target)) aside {
-        display: block;
-        position: absolute;
-        right: calc(100% + 2rem);
-        top: 0;
-        width: 200px;
-        text-align: right;
-      }
+    /* Sidebar styling */
+    aside {
+      display: none;
     }
     
-    /* Sidebar styling */
     aside h3 {
       font-size: 0.9em;
       opacity: 0.7;
@@ -53,18 +37,42 @@
       margin-bottom: 0.5rem;
     }
     
-    /* Styling */
+    /* Sidebar - show only on now page */
+    @media (min-width: 900px) {
+      section#now {
+        position: relative;
+      }
+      
+      aside {
+        display: block;
+        position: absolute;
+        right: calc(100% + 2rem);
+        top: 0;
+        width: 200px;
+        text-align: right;
+      }
+      
+      /* Hide on other pages */
+      body:has(section#about:target) aside,
+      body:has(section#uses:target) aside {
+        display: none;
+      }
+    }
+    
+    /* Post styling */
     article + article { 
       margin-top: 2rem; 
       padding-top: 2rem; 
       border-top: 1px solid #333; 
     }
+    
     time { 
       display: block; 
       font-size: 0.9em; 
       opacity: 0.7; 
       margin-bottom: 0.25rem;
     }
+    
     time a.permalink::after {
       content: ' ☍';
       margin-left: 0.5rem;
