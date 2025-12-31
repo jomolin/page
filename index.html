@@ -26,6 +26,12 @@
       display: block; 
       font-size: 0.9em; 
       opacity: 0.7; 
+      margin-bottom: 0.25rem;
+    }
+    time a.permalink::after {
+      content: ' ☍';
+      margin-left: 0.5rem;
+      font-size: 1.1em;
     }
   </style>
 </head>
@@ -33,7 +39,7 @@
   <header>
     <h1>Joseph's Page</h1>
     <nav>
-      <a href="#now">now</a>
+      <a href="./">now</a>
       <a href="#about">about</a>
       <a href="#uses">uses</a>
       <a href="feed.xml">rss</a>
@@ -42,22 +48,24 @@
 
   <main>
     <section id="now">
-      <h2>now</h2>
+      <h2>Now</h2>
       
-      <article>
-        <time>2025-12-31</time>
+      <article id="2025-12-31-first-post">
+        <time>
+          <a href="#2025-12-31-first-post" class="permalink">2025-12-31</a>
+        </time>
         <h3>My First Post</h3>
         <p>This is my first blog post!</p>
       </article>
     </section>
 
     <section id="about">
-      <h2>about</h2>
+      <h2>About</h2>
       <p>I'm Joseph, a primary school teacher in New Zealand originally from America.</p>
     </section>
 
     <section id="uses">
-      <h2>uses</h2>
+      <h2>Uses</h2>
       <ul>
         <li>Obsidian for notes</li>
       </ul>
