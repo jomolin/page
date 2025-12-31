@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Joseph's Page</title>
+  <link href="https://jomolin.github.io/page/feed.xml" rel="self"/>
+  <link href="https://jomolin.github.io/page"/>
+  <updated>2025-12-29T00:00:00Z</updated>
+  <id>https://jomolin.github.io/page/</id>
+  <author>
+    <name>Joseph</name>
+    <email>jsmolinelli@proton.me</email>
+  </author>
+  
+  <entry>
+    <title>My First Post</title>
+    <link href="https://jomolin.github.io/page#now"/>
+    <id>https://jomolin.github.io/page#2025-12-29-first-post</id>
+    <updated>2025-12-29T00:00:00Z</updated>
+    <content type="html"><![CDATA[
+      <p>This is my first blog post!</p>
+    ]]></content>
+  </entry>
+</feed>
