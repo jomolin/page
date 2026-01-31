@@ -11,7 +11,7 @@
     --light-theme-text-color: black;
     --light-theme-text-color-opposite: white;
     --dark-theme-text-color: white;
-    --dark-theme-text-color-opposite: rgb(23, 23, 23);
+    --dark-theme-text-color-opposite: rgb(45, 45, 45);
 }
 
 /* Internal Variables */
@@ -192,6 +192,23 @@ mark {
         padding: 0.25em;
         border: none;
     }
+}
+
+/* Footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    border-top: 1px solid currentColor;
+    padding-top: var(--common-element-size);
 }
 
 /* Printing support */
