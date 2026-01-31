@@ -68,6 +68,19 @@ body {
     max-width: var(--content-width);
     padding: 0 var(--common-element-size-2x);
     margin: var(--common-element-size-2x) auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    border-top: 1px solid currentColor;
+    padding-top: var(--common-element-size);
 }
 
 p:not(:first-child) {
@@ -192,23 +205,6 @@ mark {
         padding: 0.25em;
         border: none;
     }
-}
-
-/* Footer */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-
-footer {
-    margin-top: auto;
-    border-top: 1px solid currentColor;
-    padding-top: var(--common-element-size);
 }
 
 /* Printing support */
