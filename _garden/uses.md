@@ -22,7 +22,7 @@ I love that duffel bag.
 - [obsidian](https://obsidian.md/) - long notes
 - [enso](https://write.sonnet.io/) - reflections
 - google keep - fleeting notes
-- kate - coding
+- VSCode - coding
 - [raindrop.io](https://raindrop.io/) - saving and bookmarking things (not great about keeping this clean)
 - procreate - drawing
 - firefox, brave - browsers in order of preference
