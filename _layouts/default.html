@@ -1,52 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" color-mode="user">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
-  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
-  <style>
-    :root {
-      font-size: 1.1rem;
-    }
-
-    header {
-      text-align: left;
-      padding: 1rem;
-      width: 100%;
-    }
-    
-    header nav {
-      justify-content: flex-start;
-      margin-bottom: 0.5rem;
-    }
-    
-    header nav a {
-      margin-right: 1rem;
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    
-    main {
-      flex-grow: 1;
-      padding: 1rem;
-      width: 100%;
-    }
-    
-    footer {
-      padding: 1rem;
-      border-top: 1px solid currentColor;
-      margin-top: auto;
-      width: 100%;
-    }
-  </style>
 </head>
 <body>
   <header>

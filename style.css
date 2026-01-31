@@ -1,0 +1,220 @@
+/**
+ * Theme Name: Claritas
+ * Original: https://github.com/kazimieras-mi/bearblog-claritas-theme
+ * Description: A minimalist responsive theme, modified for Jekyll by me!
+ * License: MIT
+ */
+
+/* Config */
+:root {
+    --text-font-family: 'Verdana', system-ui, sans-serif;
+    --light-theme-text-color: black;
+    --light-theme-text-color-opposite: white;
+    --dark-theme-text-color: white;
+    --dark-theme-text-color-opposite: rgb(23, 23, 23);
+}
+
+/* Internal Variables */
+:root {
+    --common-element-size: 16px;
+    --common-element-size-2x: calc(var(--common-element-size) * 2);
+    --common-element-size-05x: calc(var(--common-element-size) / 2);
+    --common-color-shade: rgba(128, 128, 128, 0.05);
+    --common-color-line: rgba(128, 128, 128, 0.3);
+    --content-width: calc(var(--common-element-size) * 45);
+    --content-min-width: calc(var(--common-element-size) * 15);
+    --sidebar-width: calc(var(--common-element-size) * 10);
+    --sidebar-left-margin: calc(50vw - (var(--content-width) / 2) - var(--sidebar-width) - (var(--common-element-size) * 2));
+    --text-color: var(--light-theme-text-color);
+    --text-color-opposite: var(--light-theme-text-color-opposite);
+    --text-font-size: var(--common-element-size);
+    --text-blog-name-size: calc(var(--text-font-size) * 1.5);
+    --text-title-size: calc(var(--text-font-size) * 3);
+    --text-spacing: calc(var(--common-element-size) / 20);
+    --text-line-height: calc(1em + var(--common-element-size));
+    --text-line-height-scaleable: 1.8em;
+    --infobox-background-color: rgba(114, 188, 255, 0.25);
+    --infobox-border-color: rgba(114, 188, 255, 0.6);
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --text-title-size: calc(var(--text-font-size) * 4);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: var(--dark-theme-text-color);
+        --text-color-opposite: var(--dark-theme-text-color-opposite);
+    }
+}
+
+@media print {
+    :root {
+        --common-element-size: 12px;
+    }
+}
+
+/* Common Elements */
+body {
+    color: var(--text-color);
+    font-family: var(--text-font-family), sans-serif;
+    font-size: var(--text-font-size);
+    line-height: var(--text-line-height);
+    word-spacing: var(--text-spacing);
+    background-color: var(--text-color-opposite);
+    min-width: var(--content-min-width);
+    max-width: var(--content-width);
+    padding: 0 var(--common-element-size-2x);
+    margin: var(--common-element-size-2x) auto;
+}
+
+p:not(:first-child) {
+    margin-top: var(--common-element-size);
+}
+
+hr {
+    margin: var(--common-element-size) 0;
+    border: 0;
+    border-top: 1px solid var(--common-color-line);
+}
+
+/* Links */
+a {
+    color: var(--text-color);
+    text-decoration-color: transparent;
+    padding: 0.1em;
+    border-bottom: 2px solid var(--text-color);
+}
+
+a:hover, a:focus, a:focus-visible {
+    color: var(--text-color-opposite);
+    background-color: var(--text-color);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    line-height: var(--text-line-height);
+    font-weight: 900;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    hyphens: auto;
+}
+
+h1:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), h6:not(:first-child) {
+    margin-top: var(--common-element-size-2x);
+}
+
+main h1:first-of-type {
+    font-size: var(--text-title-size);
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+/* Embeddings */
+img, video, iframe, table {
+    max-width: 100%;
+}
+
+img:not(:first-child), video:not(:first-child), iframe:not(:first-child), table:not(:first-child) {
+    margin-top: var(--common-element-size);
+}
+
+/* Code blocks */
+pre {
+    font-size: calc(var(--text-font-size) * 0.8);
+    line-height: var(--text-line-height-scaleable);
+    padding: var(--common-element-size-05x);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: pre-wrap;
+}
+
+/* Tables */
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--common-color-line);
+    border-right: 1px solid var(--common-color-line);
+}
+
+th, td {
+    padding: var(--common-element-size-05x);
+    border-top: 1px solid var(--common-color-line);
+    border-left: 1px solid var(--common-color-line);
+}
+
+tr:nth-child(2n), th {
+    background-color: var(--common-color-shade);
+}
+
+td {
+    vertical-align: top;
+}
+
+th:empty {
+    display: none;
+}
+
+th hr, td hr {
+    margin: var(--common-element-size-05x) 0;
+}
+
+/* Text highlights */
+mark {
+    color: var(--text-color);
+    display: inline-block;
+    background-color: var(--infobox-background-color);
+    border: 1px solid var(--infobox-border-color);
+    padding: var(--common-element-size-05x);
+    margin: 0.05em;
+}
+
+/* Navigation - large screens */
+@media (min-width: 1200px) {
+    nav {
+        position: fixed;
+        top: var(--common-element-size-2x);
+        left: var(--sidebar-left-margin);
+        width: var(--sidebar-width);
+        height: calc(100vh - (var(--common-element-size) * 4));
+        overflow-y: auto;
+    }
+
+    nav * {
+        display: block;
+        margin: 0;
+        padding: 0.25em;
+        border: none;
+    }
+}
+
+/* Printing support */
+@media print {
+    tr, th, thead, h1, h2, h3 {
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+    }
+
+    h1::after, h2::after, h3::after {
+        content: "";
+        display: block;
+        height: 2cm;
+        margin-bottom: -2cm;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+/* Compatibility */
+body {
+    -webkit-text-size-adjust: 100%;
+}
