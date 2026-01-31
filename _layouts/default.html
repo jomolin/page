@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <nav>
+      <a href="{{ '/' | relative_url }}">home</a>
+      <a href="{{ '/blog/' | relative_url }}">blog</a>
+      <a href="{{ '/garden/' | relative_url }}">garden</a>
+      <a href="{{ '/now/' | relative_url }}">now</a>
+      <a href="{{ '/links/' | relative_url }}">links</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p><a href="mailto:{{ site.email }}">{{ site.email }}</a> • <a href="https://hardcover.app/@greatsandwiches">hardcover</a> • <a href="https://github.com/jomolin">github</a> • <a href="{{ '/feed.xml' | relative_url }}">rss</a></p>
+  </footer>
+</body>
+</html>

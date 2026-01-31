@@ -1,0 +1,35 @@
+title: joseph's page
+url: https://jomolin.github.io
+baseurl: /page
+author: Joseph
+email: jsmolinelli@proton.me
+
+permalink: /blog/:title/
+
+collections:
+  garden:
+    output: true
+    permalink: /garden/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: garden
+    values:
+      layout: page
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+plugins:
+  - jekyll-feed
+
+feed:
+  collections:
+    - posts
