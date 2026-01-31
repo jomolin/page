@@ -7,14 +7,15 @@
   <link rel="stylesheet" href="https://unpkg.com/mvp.css">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
   <style>
-    :root {
-      color-scheme: dark;
+    a {
+      color: inherit;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <h1>{{ site.title }}</h1>
     <nav>
       <a href="{{ '/' | relative_url }}">home</a>
       <a href="{{ '/blog/' | relative_url }}">blog</a>
