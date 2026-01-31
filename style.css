@@ -70,7 +70,7 @@ body {
     margin: var(--common-element-size-2x) auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: calc(100vh - var(--common-element-size-2x) * 2);
 }
 
 main {
