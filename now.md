@@ -3,7 +3,7 @@ layout: page
 title: now
 ---
 
-### mood: <a href="https://www.imood.com/users/jomolin"><img src="https://moods.imood.com/display/uname-jomolin/fg-ffffff/trans-1/imood.gif" alt="The current mood of jomolin at www.imood.com" style="width: 5vw;" border="0"></a>
+### mood: <a href="https://www.imood.com/users/jomolin"><img src="https://moods.imood.com/display/uname-jomolin/fg-ffffff/trans-1/imood.gif" alt="The current mood of jomolin at www.imood.com" style="height: 1em;" border="0"></a>
 
 ### status
 
