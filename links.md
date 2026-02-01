@@ -3,7 +3,7 @@ layout: page
 title: links
 ---
 
-Blogs and sites I like. Mostly education, tech, or personal website related.
+Blogs and sites I like in alphabetical order. Mostly education, tech, or personal website related. Capitalization = ¯\\\_(ツ)_/¯
 
 - [ahnvn](https://anhvn.com/)
 - [Alex Sirac](https://shellsharks.com/)
