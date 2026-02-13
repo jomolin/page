@@ -6,11 +6,10 @@
   <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" id="claritas-css">
-  <link rel="stylesheet" href="https://unpkg.com/normalize.css" id="normalize-css" disabled>
-  <link rel="stylesheet" href="https://unpkg.com/magick.css" id="magick-css" disabled>
+  <link rel="stylesheet" href="{{ '/normalize.css' | relative_url }}" id="normalize-css" disabled>
+  <link rel="stylesheet" href="{{ '/magick.css' | relative_url }}" id="magick-css" disabled>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
   <script>
-    // Apply saved theme before render to prevent flash
     if (localStorage.getItem('theme') === 'magick') {
       document.getElementById('claritas-css').disabled = true;
       document.getElementById('normalize-css').disabled = false;
@@ -35,8 +34,10 @@
   </main>
 
   <footer>
-    <p><a href="mailto:{{ site.email }}">{{ site.email }}</a> • <a href="https://hardcover.app/@greatsandwiches">hardcover</a> • <a href="https://github.com/jomolin">github</a> • <a href="{{ '/feed.xml' | relative_url }}">rss</a></p>
-    <p><button id="theme-toggle" type="button">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</button></p>
+    <p style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.5em;">
+      <span><a href="mailto:{{ site.email }}">{{ site.email }}</a> • <a href="https://hardcover.app/@greatsandwiches">hardcover</a> • <a href="https://github.com/jomolin">github</a> • <a href="{{ '/feed.xml' | relative_url }}">rss</a></span>
+      <button id="theme-toggle" type="button" style="margin-left: auto; cursor: pointer;">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</button>
+    </p>
   </footer>
 
   <script>
