@@ -60,7 +60,7 @@ body {
     background-color: var(--bg);
     font-family: "Averia Serif Libre", serif;
     font-style: normal;
-    font-size: 22px;
+    font-size: 20px;
     line-height: calc(1em + 16px);
     font-weight: 300;
     min-width: 240px;
