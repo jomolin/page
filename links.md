@@ -3,6 +3,20 @@ layout: page
 title: links
 ---
 
+<style>
+  ul {
+    columns: 3;
+    column-gap: 2em;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    break-inside: avoid;
+    margin-bottom: 0.5em;
+  }
+</style>
+
 Blogs and sites I like in alphabetical order. Mostly education, tech, or personal website related. Capitalization = ¯\\\_(ツ)_/¯
 
 - [ahnvn](https://anhvn.com/)
