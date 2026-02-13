@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" id="claritas-css">
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css" id="normalize-css" disabled>
+  <link rel="stylesheet" href="https://unpkg.com/magick.css" id="magick-css" disabled>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <script>
+    // Apply saved theme before render to prevent flash
+    if (localStorage.getItem('theme') === 'magick') {
+      document.getElementById('claritas-css').disabled = true;
+      document.getElementById('normalize-css').disabled = false;
+      document.getElementById('magick-css').disabled = false;
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -26,6 +36,34 @@
 
   <footer>
     <p><a href="mailto:{{ site.email }}">{{ site.email }}</a> • <a href="https://hardcover.app/@greatsandwiches">hardcover</a> • <a href="https://github.com/jomolin">github</a> • <a href="{{ '/feed.xml' | relative_url }}">rss</a></p>
+    <p><button id="theme-toggle" type="button">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</button></p>
   </footer>
+
+  <script>
+    (function () {
+      var claritas = document.getElementById('claritas-css');
+      var normalize = document.getElementById('normalize-css');
+      var magick = document.getElementById('magick-css');
+      var btn = document.getElementById('theme-toggle');
+
+      function isMagick() {
+        return localStorage.getItem('theme') === 'magick';
+      }
+
+      function applyTheme() {
+        var useMagick = isMagick();
+        claritas.disabled = useMagick;
+        normalize.disabled = !useMagick;
+        magick.disabled = !useMagick;
+      }
+
+      applyTheme();
+
+      btn.addEventListener('click', function () {
+        localStorage.setItem('theme', isMagick() ? 'claritas' : 'magick');
+        applyTheme();
+      });
+    })();
+  </script>
 </body>
 </html>
