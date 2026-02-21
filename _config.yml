@@ -3,6 +3,7 @@ url: https://jomolin.github.io
 baseurl: /page
 author: Joseph
 email: jsmolinelli@proton.me
+description: my little room online
 
 permalink: /blog/:title/
 
