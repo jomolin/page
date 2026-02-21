@@ -227,15 +227,6 @@ mark {
     }
 }
 
-/* Drop caps */
-article p:first-of-type::first-letter {
-    font-size: 3em;
-    float: left;
-    line-height: 0.8;
-    margin-right: 0.1em;
-    font-weight: 900;
-}
-
 /* Blockquotes */
 blockquote {
     border-left: 3px solid var(--text-color);
@@ -249,21 +240,6 @@ blockquote {
 ::selection {
     background-color: #b8f5c8;
     color: black;
-}
-
-/* Date link hover — dramatic underline slide */
-time a {
-    border-bottom: none;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: 3px;
-    transition: text-decoration-color 0.2s ease;
-}
-
-time a:hover {
-    text-decoration-color: var(--text-color);
-    color: inherit;
-    background-color: transparent;
 }
 
 /* Compatibility */

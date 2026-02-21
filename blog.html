@@ -34,9 +34,6 @@ title: blog
   <article>
     <time><a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }}</a></time>
     <h3>{{ post.title }}</h3>
-    <p>{{ post.excerpt | strip_html }}</p>
-    {% if post.content != post.excerpt %}
-      <a href="{{ post.url | relative_url }}">read more →</a>
-    {% endif %}
+    {{ post.content }}
   </article>
 {% endfor %}
