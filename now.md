@@ -13,4 +13,6 @@ title: now
 
 ### reading
 
+{% include currently_reading.html %}
+
 - [The Alloy of Law](https://hardcover.app/@greatsandwiches/books/currently-reading) by Brandon Sanderson
