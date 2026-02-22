@@ -20,7 +20,6 @@ query = """
   }
 }
 """
-# status_id 2 = currently reading
 
 response = requests.post(
     "https://api.hardcover.app/v1/graphql",
@@ -32,9 +31,10 @@ response = requests.post(
     }
 )
 
-ddata = response.json()
 print("Status code:", response.status_code)
+data = response.json()
 print("Response:", data)
+
 user_books = data["data"]["me"][0]["user_books"]
 
 books = []
