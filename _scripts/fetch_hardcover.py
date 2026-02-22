@@ -32,7 +32,9 @@ response = requests.post(
     }
 )
 
-data = response.json()
+ddata = response.json()
+print("Status code:", response.status_code)
+print("Response:", data)
 user_books = data["data"]["me"][0]["user_books"]
 
 books = []
