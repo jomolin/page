@@ -25,7 +25,7 @@ response = requests.post(
     "https://api.hardcover.app/v1/graphql",
     json={"query": query},
     headers={
-        "Authorization": f"Bearer {API_KEY}",
+        "Authorization": API_KEY,
         "Content-Type": "application/json",
         "User-Agent": "jekyll-blog-currently-reading/1.0"
     }
