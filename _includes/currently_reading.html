@@ -1,4 +1,10 @@
-{% for book in site.data.currently_reading %}
-- {% if book.cover %}<img src="{{ book.cover }}" alt="{{ book.title }}" height="80">{% endif %}
-  **[{{ book.title }}]({{ book.url }})** by {{ book.author }}
-{% endfor %}
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+  {% for book in site.data.currently_reading %}
+    <a href="{{ book.url }}" target="_blank" style="text-decoration: none; color: inherit; width: 130px;">
+      {% if book.cover %}
+        <img src="{{ book.cover }}" alt="Cover of {{ book.title }}" height="200" style="display: block;">
+      {% endif %}
+      <p style="margin: 0.5rem 0 0; font-size: 0.85rem;">{{ book.title }}</p>
+    </a>
+  {% endfor %}
+</div>
