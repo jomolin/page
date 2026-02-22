@@ -1,5 +1,3 @@
-## Currently Reading
-
 {% for book in site.data.currently_reading %}
 - {% if book.cover %}<img src="{{ book.cover }}" alt="{{ book.title }}" height="80">{% endif %}
   **[{{ book.title }}]({{ book.url }})** by {{ book.author }}
