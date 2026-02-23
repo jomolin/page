@@ -28,6 +28,9 @@ defaults:
     values:
       layout: default
 
+titles_from_headings:
+  enabled: false
+
 plugins:
   - jekyll-feed
 
