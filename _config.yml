@@ -28,12 +28,6 @@ defaults:
     values:
       layout: default
 
-titles_from_headings:
-  enabled: false
-
-relative_links:
-  enabled: false
-
 plugins:
   - jekyll-feed
 
