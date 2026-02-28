@@ -1,9 +1,12 @@
 /**
- * Theme Name: Claritas
+ * Theme Name: Claritas (modified)
  * Original: https://github.com/kazimieras-mi/bearblog-claritas-theme
- * Description: A minimalist responsive theme, modified for Jekyll by me!
  * License: MIT
  */
+
+html {
+    scrollbar-gutter: stable;
+}
 
 /* Config */
 :root {
