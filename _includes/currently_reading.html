@@ -1,6 +1,6 @@
 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
   {% for book in site.data.currently_reading %}
-    <a href="{{ book.url }}" target="_blank" style="text-decoration: none; color: inherit; width: 130px;">
+    <a href="{{ book.url }}" target="_blank" style="text-decoration: none; width: 130px; display: block;">
       {% if book.cover %}
         <img src="{{ book.cover }}" alt="Cover of {{ book.title }}" height="200" style="display: block;">
       {% endif %}
