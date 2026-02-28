@@ -7,7 +7,7 @@
 
 /* Config */
 :root {
-    --text-font-family: 'Verdana', system-ui, sans-serif;
+    --text-font-family: Georgia, Cambria, 'Times New Roman', serif;
     --light-theme-text-color: black;
     --light-theme-text-color-opposite: white;
     --dark-theme-text-color: white;
@@ -16,31 +16,19 @@
 
 /* Internal Variables */
 :root {
-    --common-element-size: 16px;
+    --common-element-size: 18px;
     --common-element-size-2x: calc(var(--common-element-size) * 2);
     --common-element-size-05x: calc(var(--common-element-size) / 2);
     --common-color-shade: rgba(128, 128, 128, 0.05);
     --common-color-line: rgba(128, 128, 128, 0.3);
-    --content-width: calc(var(--common-element-size) * 45);
+    --content-width: 70ch;
     --content-min-width: calc(var(--common-element-size) * 15);
-    --sidebar-width: calc(var(--common-element-size) * 10);
-    --sidebar-left-margin: calc(50vw - (var(--content-width) / 2) - var(--sidebar-width) - (var(--common-element-size) * 2));
     --text-color: var(--light-theme-text-color);
     --text-color-opposite: var(--light-theme-text-color-opposite);
     --text-font-size: var(--common-element-size);
-    --text-blog-name-size: calc(var(--text-font-size) * 1.5);
-    --text-title-size: calc(var(--text-font-size) * 3);
-    --text-spacing: calc(var(--common-element-size) / 20);
-    --text-line-height: calc(1em + var(--common-element-size));
-    --text-line-height-scaleable: 1.8em;
+    --text-line-height: 1.8;
     --infobox-background-color: rgba(114, 188, 255, 0.25);
     --infobox-border-color: rgba(114, 188, 255, 0.6);
-}
-
-@media (min-width: 1200px) {
-    :root {
-        --text-title-size: calc(var(--text-font-size) * 4);
-    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,10 +47,9 @@
 /* Common Elements */
 body {
     color: var(--text-color);
-    font-family: var(--text-font-family), sans-serif;
+    font-family: var(--text-font-family);
     font-size: var(--text-font-size);
     line-height: var(--text-line-height);
-    word-spacing: var(--text-spacing);
     background-color: var(--text-color-opposite);
     min-width: var(--content-min-width);
     max-width: var(--content-width);
@@ -71,6 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - var(--common-element-size-2x) * 2);
+    text-align: left;
 }
 
 main {
@@ -108,7 +96,7 @@ a:hover, a:focus, a:focus-visible {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    line-height: var(--text-line-height);
+    line-height: 1.3;
     font-weight: 900;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -121,7 +109,7 @@ h1:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-
 }
 
 main h1:first-of-type {
-    font-size: var(--text-title-size);
+    font-size: calc(var(--text-font-size) * 2.5);
     font-style: italic;
     text-transform: uppercase;
 }
@@ -138,12 +126,18 @@ img:not(:first-child), video:not(:first-child), iframe:not(:first-child), table:
 /* Code blocks */
 pre {
     font-size: calc(var(--text-font-size) * 0.8);
-    line-height: var(--text-line-height-scaleable);
+    line-height: 1.6;
     padding: var(--common-element-size-05x);
     word-break: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
     white-space: pre-wrap;
+    font-family: monospace;
+}
+
+code {
+    font-family: monospace;
+    font-size: calc(var(--text-font-size) * 0.85);
 }
 
 /* Tables */
@@ -188,23 +182,49 @@ mark {
     margin: 0.05em;
 }
 
-/* Navigation - large screens */
-@media (min-width: 1200px) {
-    nav {
-        position: fixed;
-        top: var(--common-element-size-2x);
-        left: var(--sidebar-left-margin);
-        width: var(--sidebar-width);
-        height: calc(100vh - (var(--common-element-size) * 4));
-        overflow-y: auto;
-    }
+/* Navigation - centered top bar */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 2rem;
+    margin: 1rem 0 2rem;
+}
 
-    nav * {
-        display: block;
-        margin: 0;
-        padding: 0.25em;
-        border: none;
-    }
+nav a {
+    border-bottom: none;
+    padding: 0.25em 0;
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: var(--text-color);
+    transform: scaleX(0);
+    transition: transform 0.15s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    transform: scaleX(1);
+}
+
+nav a.active {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 4px;
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+nav a:hover, nav a:focus, nav a:focus-visible {
+    color: var(--text-color);
+    background-color: transparent;
 }
 
 /* Printing support */
