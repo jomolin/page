@@ -5,25 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
   <link rel="icon" href="https://fav.farm/🦥" />
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" id="claritas-css">
-  <link rel="stylesheet" href="{{ '/normalize.css' | relative_url }}" id="normalize-css" disabled>
-  <link rel="stylesheet" href="{{ '/magick.css' | relative_url }}" id="magick-css" disabled>
-  <link rel="stylesheet" href="{{ '/dos.css' | relative_url }}" id="dos-css" disabled>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.violet.min.css">
 {% if page.excerpt %}
   <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
 {% elsif site.description %}
   <meta name="description" content="{{ site.description }}">
 {% endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
-  <script>
-    (function () {
-      var theme = localStorage.getItem('theme') || 'claritas';
-      document.getElementById('claritas-css').disabled = theme !== 'claritas';
-      document.getElementById('normalize-css').disabled = theme !== 'magick';
-      document.getElementById('magick-css').disabled   = theme !== 'magick';
-      document.getElementById('dos-css').disabled      = theme !== 'dos';
-    })();
-  </script>
 </head>
 <body>
   <header>
@@ -42,30 +30,9 @@
   </main>
 
   <footer>
-    <p style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.5em;">
-      <span><a href="mailto:{{ site.email }}">{{ site.email }}</a> • <a href="https://hardcover.app/@greatsandwiches">hardcover</a> • <a href="https://github.com/jomolin">github</a> • <a href="{{ '/feed.xml' | relative_url }}">rss</a></span>
-      <button id="theme-toggle" type="button" style="margin-left: auto; cursor: pointer;">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</button>
+    <p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a> • <a href="https://hardcover.app/@greatsandwiches">hardcover</a> • <a href="https://github.com/jomolin">github</a> • <a href="{{ '/feed.xml' | relative_url }}">rss</a>
     </p>
   </footer>
-
-  <script>
-    (function () {
-      var themes = ['claritas', 'magick', 'dos'];
-
-      function applyTheme(theme) {
-        document.getElementById('claritas-css').disabled = theme !== 'claritas';
-        document.getElementById('normalize-css').disabled = theme !== 'magick';
-        document.getElementById('magick-css').disabled   = theme !== 'magick';
-        document.getElementById('dos-css').disabled      = theme !== 'dos';
-        localStorage.setItem('theme', theme);
-      }
-
-      document.getElementById('theme-toggle').addEventListener('click', function () {
-        var current = localStorage.getItem('theme') || 'claritas';
-        var next = themes[(themes.indexOf(current) + 1) % themes.length];
-        applyTheme(next);
-      });
-    })();
-  </script>
 </body>
 </html>
