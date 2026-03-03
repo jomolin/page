@@ -2,7 +2,7 @@
 title: social spider mans
 date: 2026-02-28
 ---
-The biggest culture shock when I came to New Zealand, and back into the Wester World(tm), wasn't the food or the extreme avarice toward collective thinking, it was that people still use Facebook in earnest.
+The biggest culture shock when I came to New Zealand, and back into the Western World(tm), wasn't the food or the extreme avarice toward collective thinking, it was that people still use Facebook in earnest.
 
 I'd deliberately exited social media years before, made easier by moving to Korea, where people weren't using the same platforms as the U.S. anyway. It never really came back into my life, but I keep feeling like maybe I should "speak" social media, like it would add some value to my knowledge of our own culture or help me bond with coworkers. At the same time, I hated my time on social media. It always felt like a waste. Getting back on that train isn't possible anymore for me.
 
