@@ -10,7 +10,7 @@ html {
 
 /* Config */
 :root {
-    --text-font-family: Georgia, Cambria, 'Times New Roman', serif;
+    --text-font-family: Georgia, Cambria, "Palatino Linotype", Palatino, "Book Antiqua", serif;
     --light-theme-text-color: black;
     --light-theme-text-color-opposite: white;
     --dark-theme-text-color: white;
